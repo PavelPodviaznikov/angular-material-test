@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <link href="bower_components/angular-material/angular-material.css" rel="stylesheet" />
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body layout="column">
+<header layout="row">
+  <div layout="column" flex>
+    <md-toolbar layout="row" class="md-whiteframe-4dp">
+      <md-sidenav  md-is-locked-open="true" layout-align="center center" class="md-primary">
+        <div class="md-display-2 logo">openBoM</div>
+      </md-sidenav>
+        <div class="md-toolbar-tools" flex>
+          <span class="md-headline md-padding md-accent-text">Dashboard</span>
+          <md-subheader>Bill of Materials > <a>Recent</a></md-subheader>
+          <span flex></span>
+          <md-button class="md-accent-btn">Invite to openBom</md-button>
+          <md-subheader>Pavel P. / <a class="md-accent-text">Logout</a></md-subheader>
+        </div>
+    </md-toolbar>
+  </div>
+</header>
+
+<main layout="row" flex>
+  <md-sidenav class="md-primary md-whiteframe-4dp" md-is-locked-open="true" layout="column">
+    <div class="filters">
+      <div class="md-headline">Bills of Materials</div>
+      <ul>
+        <li class="selected">
+          <span>Recent</span>
+          <div>
+            <span>6</span>
+          </div>
+        </li>
+        <li>
+          <span>Favorites</span>
+          <div><span>14</span></div>
+        </li>
+        <md-divider></md-divider>
+        <li>
+          <span>Owned by me</span>
+          <div><span>3</span></div>
+        </li>
+        <li>
+          <span>Shared with me</span>
+          <div><span>5</span></div>
+        </li>
+        <md-divider></md-divider>
+        <li>
+          <span>Active</span>
+          <div><span>10</span></div>
+        </li>
+        <li>
+          <span>Archived</span>
+          <div><span>0</span></div>
+        </li>
+      </ul>
+      <md-divider></md-divider>
+      <div class="md-headline">Inventory</div>
+      <ul>
+        <li>Location 1</li>
+        <li>Location 2</li>
+      </ul>
+    </div>
+  </md-sidenav>
+  <md-content class="content" layout="row" flex>
+    <md-card flex>
+      <div class="hue-1 md-whiteframe-2dp action-header" layout="row">
+        <md-button> <ng-md-icon icon="add_circle_outline"></ng-md-icon> new bom</md-button>
+        <md-button> <ng-md-icon icon="file_upload"></ng-md-icon> Upload</md-button>
+      </div>
+      <div class="documents-table" layout="column" layout-align="center center" flex>
+        <span class="md-display-1">You have not created any BoMs yest.</span>
+        <div layout="raw">
+          <md-card layout="column">
+            <md-card-actions layout="row" layout-align="center center">
+              <md-button class="md-raised action-btn"> <ng-md-icon icon="add_circle_outline"></ng-md-icon> new bom</md-button>
+            </md-card-actions>
+            <md-card-content>
+              <p>Start from scratch, or use one of our templates.</p>
+            </md-card-content>
+          </md-card>
+          <md-card layout="column">
+            <md-card-actions layout="row" layout-align="center center">
+              <md-button class="md-raised action-btn"> <ng-md-icon icon="file_upload"></ng-md-icon> import</md-button>
+            </md-card-actions>
+            <md-card-content>
+              <p>Start from scratch, or use one of our templates.</p>
+            </md-card-content>
+          </md-card>
+        </div>
+      </div>
+    </md-card>
+  </md-content>
+</main>
+
+<footer class="md-accent md-whiteframe-16dp" layout="row">
+  <div class="terms" flex>Terms&Privacy</div>
+  <div class="rights" flex>@ 2016 Newman Cloud Inc. All rights reserved.</div>
+  <div class="build" flex>Version: 0.0.5-build-1111</div>
+</footer>
+
+
+<style>
+  .md-primary {
+    background-color: #F5F5F5;
+  }
+
+   .hue-1 {
+    background-color: #E0E0E0;
+  }
+
+   .hue-2 {
+    background-color: #9E9E9E;
+  }
+
+   .hue-3 {
+    background-color: #424242;
+  }
+
+  .md-accent {
+    background-color: #FF7043;
+  }
+
+  .md-accent-text {
+    color: #FF7043!important;
+  }
+
+  .md-accent-btn {
+    border: 1px solid #FF7043;
+    color: #FF7043;
+  }
+
+  .md-subheader {
+    background-color: inherit;
+  }
+
+  md-card {
+    margin-top: 0;
+    margin-bottom: 1px;
+  }
+
+
+  a {
+    cursor: pointer;
+  }
+
+  footer {
+    padding: 10px;
+    margin-top: 10px;
+    color: #fff;
+  }
+
+  footer .rights {
+    opacity: 0.7;
+    text-align: center;
+  }
+
+  footer .build {
+    opacity: 0.7;
+    text-align: right;
+  }
+
+  footer .terms {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  .logo {
+    font-family: serif;
+  }
+
+  header {
+    margin-bottom: 10px;
+  }
+
+  .filters {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .filters md-divider {
+    border-color: #000;
+    margin: 10px 0;
+    opacity: 0.6;
+  }
+
+  .filters .md-headline {
+    opacity: 0.7;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  ul li {
+    list-style: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  ul li div {
+    display: inline-block;
+    width: 15px;
+    padding: 4px;
+    background-color: #ccc;
+    border-radius: 50%;
+    float: right;
+    color: #000;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  ul li div span {
+    opacity: 0.6;
+  }
+
+  ul {
+    padding: 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .selected {
+    border-left: 5px solid #FF7043;
+    color: #FF7043;
+  }
+
+  .selected div {
+    background-color: #FF7043;
+    opacity: 0.8;
+    color: #fff;
+  }
+
+  .selected div span {
+    opacity: 1;
+  }
+
+  .documents-table md-card {
+    padding: 20px;
+  }
+
+  .documents-table span {
+    margin-bottom: 10px;
+    opacity: 0.7;
+  }
+
+  .action-btn {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  md-card p {
+    opacity: 0.7;
+  }
+
+  .action-header .md-button {
+    background-color: #FF7043;
+    color: #fff;
+  }
+
+  .action-header .md-button ng-md-icon {
+    fill: #fff;
+  }
+
+</style>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js" type="text/javascript"></script>
+<script src="bower_components/angular-aria/angular-aria.js" type="text/javascript"></script>
+<script src="bower_components/angular-material/angular-material.js" type="text/javascript"></script>
+<script src="bower_components/angular-material-icons/angular-material-icons.js" type="text/javascript"></script>
+<script src="app.js"></script>
+<script src="view1/view1.js"></script>
+<script src="view2/view2.js"></script>
+</body>
+</html>

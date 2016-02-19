@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <link href="bower_components/angular-material/angular-material.css" rel="stylesheet" />
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body layout="column">
+  <div layout="row" flex>
+
+    <div layout="column">
+      <md-sidenav md-is-locked-open="true" class="md-whiteframe-8dp" layout-align="top center" flex>
+        <md-toolbar layout="row">
+          <div layout="column" layout-align="center center" class="logo" flex>
+            <div class="md-display-3">openBoM</div>
+          </div>
+        </md-toolbar>
+
+        <div class="filters">
+          <div class="md-headline">Bills of Materials</div>
+          <ul>
+            <li>
+              <span style="color: #FF7043;">Recent</span>
+              <div style="background-color: #FF7043;">6</div>
+            </li>
+            <li>
+              <span>Favorites</span>
+              <div>14</div>
+            </li>
+            <md-divider></md-divider>
+            <li>
+              <span>Owned by me</span>
+              <div>3</div>
+            </li>
+            <li>
+              <span>Shared with me</span>
+              <div>5</div>
+            </li>
+            <md-divider></md-divider>
+            <li>
+              <span>Active</span>
+              <div>10</div>
+            </li>
+            <li>
+              <span>Archived</span>
+              <div>0</div>
+            </li>
+          </ul>
+          <md-divider></md-divider>
+          <div class="md-headline">Inventory</div>
+          <ul>
+            <li>Location 1</li>
+            <li>Location 2</li>
+          </ul>
+        </div>
+      </md-sidenav>
+    </div>
+
+    <div layout="column" flex>
+      <header>
+        <md-toolbar layout="row" class="md-whiteframe-4dp">
+          <div class="header" layout="column" flex>
+            <div class="md-toolbar-tools" layout="row" flex>
+              <div class="md-headline" layout-padding>
+                <span class="orange-text">Dashboard</span>
+              </div>
+              <md-subheader>Bill of Materials > <a>Recent</a></md-subheader>
+              <span flex></span>
+              <md-button>Invite to openBom</md-button>
+              <div layout="column" layout-align="center center">
+                <md-subheader>Pavel P. / <a>Logout</a></md-subheader>
+              </div>
+            </div>
+          </div>
+        </md-toolbar>
+      </header>
+      <md-content class="content" layout="row" flex>
+        <md-card>
+          <div class="content-header md-whiteframe-2dp" layout="row">
+            <md-button> <ng-md-icon icon="add_circle_outline"></ng-md-icon> new bom</md-button>
+            <md-button> <ng-md-icon icon="file_upload"></ng-md-icon> Upload</md-button>
+          </div>
+          <div class="documents-table" layout="row" layout-align="center center" flex>
+            <span class="md-display-1">documents</span>
+          </div>
+        </md-card>
+      </md-content>
+    </div>
+  </div>
+
+<footer class="orange">
+  <div class="footer md-subhead" layout="row">
+    <div class="terms" flex>Terms&Privacy</div>
+    <div class="rights" flex>@ 2016 Newman Cloud Inc. All rights reserved.</div>
+    <div class="build" flex>Version: 0.0.5-build-1111</div>
+  </div>
+</footer>
+
+<style>
+  ul li {
+    list-style: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  ul li div {
+    display: inline-block;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 100%;
+    text-align: center;
+    float: right;
+    color: #000;
+  }
+
+  ul li span {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  ul {
+    padding: 0;
+    opacity: 0.7;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .filters {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .filters md-divider {
+    border-color: #fff;
+    margin: 10px 0;
+    opacity: 0.9;
+  }
+
+  .filters .md-headline {
+    opacity: 0.7;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  ng-md-icon {
+    fill: #fff;
+  }
+
+  a {
+    color: #37474F!important;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  md-sidenav{
+    background-color: #263238;
+    color: #fff;
+    border-right: 10px solid #CFD8DC;
+  }
+
+  md-sidenav md-toolbar {
+    background-color: #263238;
+    color: #fff;
+  }
+
+  md-card{
+    width: 100%;
+  }
+
+  .orange {
+    background-color: #FF7043
+  }
+
+  .orange-text {
+    color: #FF7043
+  }
+
+  .logo {
+    font-family: serif;
+    color: #fff;
+    background-color: #263238;
+  }
+
+  .footer {
+    color: #fff;
+    opacity: 0.6;
+    padding: 10px;
+  }
+
+  .footer .rights {
+    text-align: center;
+  }
+
+  .footer .build {
+    text-align: right;
+  }
+
+  .footer .terms {
+    cursor: pointer;
+  }
+
+  .header {
+    background-color: #fff;
+    color: #000
+  }
+
+  .header .md-button {
+    border: 1px solid #FF7043;
+    color: #FF7043;
+  }
+
+  .content {
+    background-color: #ccc
+  }
+
+  .subheader-btn {
+    border: 1px solid #FF7043;
+    color: #FF7043;
+  }
+
+  .subheader {
+    background-color: #455A64;
+    color: #fff;
+  }
+
+  .content-header {
+    background-color: #37474F;
+    color: #fff;
+  }
+
+  .content-header .md-button {
+    opacity: 0.8;
+  }
+
+</style>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js" type="text/javascript"></script>
+<script src="bower_components/angular-aria/angular-aria.js" type="text/javascript"></script>
+<script src="bower_components/angular-material/angular-material.js" type="text/javascript"></script>
+<script src="bower_components/angular-material-icons/angular-material-icons.js" type="text/javascript"></script>
+<script src="app.js"></script>
+<script src="view1/view1.js"></script>
+<script src="view2/view2.js"></script>
+</body>
+</html>
